@@ -329,7 +329,7 @@ bottom: 10px
     color: whitesmoke;
 }
     .formContact{
-            background-image: linear-gradient(red, yellow);           
+            background-image: linear-gradient(black, rgba(245, 245, 245, 0.623));           
     }
 
 .supplierBody{
