@@ -1,0 +1,18 @@
+/* hoja de estilos responsive - completado con mobile first solo en index.html*/    
+
+.inputDesktop {
+    display: none;
+} 
+
+@media only screen and (min-width: 1024px) {
+        .inputDesktop{
+            display: block;
+        }
+
+        .inputMobile{
+            display: none;
+        }
+     }
+     
+
+  

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeTodo.com</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
+</head>
+<link rel="stylesheet" type="text/css" href="../styles/common.css">
+<body class="contactBody">
+    <header>
+        <div class="encabezado">
+            <div class="headerTitulo">
+                  <h1>DeTodo.com</h1>
+            </div>
+            <div class="inputDesktop">
+                  <input type="search" placeholder="buscar productos y servicios..." size="100%">
+            </div>
+            <div class="inputMobile">
+               <input type="search" placeholder="buscar productos y servicios...">
+             </div>
+        </div>
+         <nav class="nav__listadolinks">
+            <ul>
+               <li><a class="nav__menu" href="../index.html">Inicio</a></li>
+               <li><a class="nav__menu" href="Aboutus.html">Acerca de nosotros</a></li>
+               <li><a class="nav__menu" href="merchandise.html">Productos y Servicios</a>
+                  <ul>
+                     <li><a href="merchandise.html">Electro</a></li>
+                     <li><a href="merchandise.html">Muebles</a></li>
+                     <li><a href="merchandise.html">Bazar</a></li>
+                  </ul>
+               </li>   
+               <li><a class="nav__menu" href="contact.html">Contactenos</a></li>
+               <li><a class="nav__menu" href="supplier.html">Proveedores</a></li>                  
+            </ul>
+</nav> 
+    </header>
+            <form class="formContact">
+                <fieldset>
+                    <legend>Formulario de contacto</legend>
+                    <br>
+                    <label for="sexo:">Seleccione el motivo de su contacto: </label>
+                    <input type="radio" name="sexo" id="man" value="man" /> <!--el valor name hace que sean excluyentes si es igual-->
+                    <label for="sexo">Dudas y consultas</label>
+                    <input type="radio" name="sexo" value="mujer" id="woman" />
+                    <label for="sexo">Reclamos</label>
+                    <br>
+                    <br>
+
+
+                    <label for="name">Apellido y nombres</label>
+                    <br>
+                    <input type="text" name="name" placeholder="Perez, Juan Ignacio" required>
+                    <br>
+                    <label for="phone">Teléfono</label>
+                    <br>
+                    <input type="number" name="phone" placeholder="+549 11 2222 5555" required> <!--el valor "required" hace que sea requerido rellenar el campo-->
+                    <br>
+                    <label for="email">e-mail</label>
+                    <br>
+                    <input type="email" name="email" placeholder="juanperez@gmail.com">
+                    <br>
+                    <label for="comentarios">Comentarios</label>
+                    <br>
+                    <textarea name="comentarios" cols="30" rows="10" placeholder="Escriba aquí sus comentarios" required></textarea>></textarea>
+                    <br>
+                    <label for="contact">De que forma desea ser contactado por nosotros:</label>
+                    <br>
+                    <select name="talles">
+                        <option value="email">e-mail</option>
+                        <option value="phone">Whatsapp</option>
+                        <option value="both">Ambos</option>
+                    </select>
+                    <input type="submit" value="enviar el formulario"/>            
+                    <br>
+                    </fieldset>
+                <br>
+
+            </form>    
+            <footer class="footer">
+                    <p>Copyright © 2021
+                    detodo.com™. Todos los derechos reservados.
+                    </p>
+            </footer>    
+</body>
+</html>
