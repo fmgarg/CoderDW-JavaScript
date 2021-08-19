@@ -3,41 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>DeTodo.com</title>
+    <!--Fuente de google-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!--Mi hoja de estilos-->
+    <link rel="stylesheet" type="text/css" href="../styles/common.css">
 </head>
-<link rel="stylesheet" type="text/css" href="../styles/common.css">
 <body class="aboutusBody">
     <header>
         <div class="encabezado">
             <div class="headerTitulo">
                   <h1>DeTodo.com</h1>
             </div>
-            <div class="inputDesktop">
-                  <input type="search" placeholder="buscar productos y servicios..." size="100%">
+            <div class="Desktop">
+               <input type="search" placeholder="buscar productos y servicios..." size="68%">
             </div>
-            <div class="inputMobile">
+            <div class="Mobile">
                <input type="search" placeholder="buscar productos y servicios...">
             </div>
+            <form class="d-flex"> <!--Carrito del bootstrap theme-->
+               <button class="btn btn-outline-dark" type="submit">
+                   <i class="bi-cart-fill me-1"></i>
+                   Carrito
+                   <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+               </button>
+           </form>
         </div>   
-         <nav class="nav__listadolinks">
-            <ul>
-               <li><a class="nav__menu" href="../index.html">Inicio</a></li>
-               <li><a class="nav__menu" href="Aboutus.html">Acerca de nosotros</a></li>
-               <li><a class="nav__menu" href="merchandise.html">Productos y Servicios</a>
-                  <ul>
-                     <li><a href="merchandise.html">Electro</a></li>
-                     <li><a href="merchandise.html">Muebles</a></li>
-                     <li><a href="merchandise.html">Bazar</a></li>
-                  </ul>
-               </li>   
-               <li><a class="nav__menu" href="contact.html">Contactenos</a></li>
-               <li><a class="nav__menu" href="supplier.html">Proveedores</a></li>                  
-            </ul>
-        </nav> 
+        <nav class="navbar navbar-expand-lg navbar-light"> <!--nav bar de bootstrap con menú hamburguesa en responsive-->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav navbar-nav-scroll">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Inicio<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/Aboutus.html">Acerca de nosotros<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="../pages/merchandise.html" id="navbarScrollingDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                            Productos y servicios
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                            <li><a class="dropdown-item" href="../pages/merchandise.html">Electrodomésticos</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../pages/merchandise.html">Bazar</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../pages/merchandise.html">Muebles</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../pages/merchandise.html">Envíos</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="../pages/merchandise.html">Servicios</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/contact.html">Contactenos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/supplier.html" tabindex="-1" aria-disabled="true">Proveedores</a>
+                        </li>
+                    </ul>
+            </div>
+      </nav> 
     </header>  
     <section class="aboutus">  
             <div class="grid">
@@ -56,7 +91,6 @@
                     <h2>Valores</h2>
                     <p>Nuestro principal valor es la seguridad en sus operaciones. Ofrecemos una plataforma de pagos confiable y segura para proteger a nuestros clientes.</p>
                 </article>
-                </div>
             </div>
             <img class="imgPulgares"src="../imagenes/imagen1.jpg">
     </section>
@@ -65,5 +99,9 @@
             detodo.com™. Todos los derechos reservados.
             </p>
        </footer>
+   <!--Scripts de bootstrap-->
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
 </body>
 </html>

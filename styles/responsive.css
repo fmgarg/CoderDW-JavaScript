@@ -1,18 +1,30 @@
 /* hoja de estilos responsive - completado con mobile first solo en index.html*/    
 
-.inputDesktop {
+.Desktop {
     display: none;
 } 
 
 @media only screen and (min-width: 1024px) {
-        .inputDesktop{
+        .Desktop{
             display: block;
         }
 
-        .inputMobile{
+        .Mobile{
             display: none;
         }
      }
+
+/* para reparar posición del nav bar de bootstrap y que quede centrado en desktop*/
+
+     @media (max-width: 991.98px) {
+        
+      }
+      
+      @media (min-width: 992px) {
+        .navbar-nav{
+            padding-left: 310px;
+        }
+      }
      
 
   

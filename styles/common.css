@@ -13,6 +13,8 @@ body {
     flex-direction: row;
     align-items:flex-start;
     justify-content: flex-start;
+    margin-top: 3%;
+    margin-bottom: 1%;
 
 }
 
@@ -29,17 +31,17 @@ body {
             width: auto;
 }
         
-    .inputDesktop {
+    .Desktop {
             font-family:sans-serif;
             color:whitesmoke;
             font-size: 24px;
             text-align: left;
             border: lime solid 0px;
             align-self: center;
-            margin-left: 7%;
+            margin-left: 2%;
 }
 
-    .inputMobile{
+    .Mobile{
             font-family:sans-serif;
             color:whitesmoke;
             font-size: 24px;
@@ -48,6 +50,13 @@ body {
             align-self: center;
             margin-left: 7%;
     }
+    .d-flex{ /*ícono del carrito de compras de bootstrap*/
+        margin-left: 3%;
+        margin-top: 0.5%;
+        max-width: 40%;
+        background-color: rgba(245, 245, 245, 0);
+    }
+
 
 .header__pulgares {
     display:block;
@@ -56,79 +65,71 @@ body {
     margin: auto;
     border: 0px solid blue}
 
-.nav__listadolinks {
-    color:whitesmoke;
-    font-family:sans-serif;
-    font-size: 22px;
-    text-align: center;
-    text-decoration:none;
-    margin-bottom: 50px;
-    background-color: black;
-    }
-    .nav__menu {
-            font-family:sans-serif;
-            font-size: 18px;
-            color:whitesmoke;
-            text-align: left;
-            text-decoration:none;
-            margin-inline: 10px;
-            display: flex;
-            justify-content: space-around;
-            }
+   /*desde aquí para cambiar los estilos del navbar de bootstrap*/
+    .navbar-light .navbar-brand {
+        color: whitesmoke;
+      }
+      
+      .navbar-light .navbar-brand:hover, .navbar-light .navbar-brand:focus {
+        color: whitesmoke;
+      }
+      
+      .navbar-light .navbar-nav .nav-link {
+        color: whitesmoke;
+      }
+      
+      .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
+        color: whitesmoke;
+      }
+      
+      .navbar-light .navbar-nav .nav-link.disabled {
+        color: whitesmoke;
+      }
+      
+      .navbar-light .navbar-nav .show > .nav-link,
+      .navbar-light .navbar-nav .active > .nav-link,
+      .navbar-light .navbar-nav .nav-link.show,
+      .navbar-light .navbar-nav .nav-link.active {
+        color: whitesmoke;
+      }
+      
+      .navbar-light .navbar-toggler {
+        color: whitesmoke;
+        border-color: rgba(0, 0, 0, 0.1);
+      }
+      
+      .navbar-light .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(245, 245, 245)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+      }
+      
+      .navbar-light .navbar-text {
+        color: whitesmoke;
+      }
+      
+      .navbar-light .navbar-text a {
+        color: whitesmoke;
+      }
+      
+      .navbar-light .navbar-text a:hover, .navbar-light .navbar-text a:focus {
+        color: whitesmoke;
+      }
+/*fin de los estilos del navbar/
 
-         ul {
-            list-style: none;
-            font-size:0
-            }
-         header nav ul li {
-            display: inline-block;
-            width: auto;
-            position:relative;
-            font-family:sans-serif;
-            font-size: 18px;
-            text-align: left;
-            text-decoration:none;
-            background-color:black;
-            color:whitesmoke;
-            }
-         ul ul {
-            position: absolute;
-            display: none;
 
-            }
-         ul ul li {
-            display: block;
-            
-            }
-         ul li:hover ul {
-            display:flex;
-            flex-direction: column;
-            font-family:sans-serif;
-            font-size: 18px;
-            color:whitesmoke;
-            text-align: center;
-            text-decoration:none
-            }
-            ul li:visited ul {
-                    display:flex;
-                    flex-direction: column;
-                    font-family:sans-serif;
-                    font-size: 18px;
-                    color:whitesmoke;
-                    text-align: center;
-                    text-decoration:none
-                    }
-                    header nav ul li a {
-                            display: inline-block;
-                            width: auto;
-                            position:relative;
-                            font-family:sans-serif;
-                            font-size: 18px;
-                            text-align: left;
-                            text-decoration:none;
-                            background-color:black;
-                            color:whitesmoke;
-                            }
+
+/*inicio carousel del index.html*/
+.w-100{
+    max-width: 50%;
+    margin-left: 25%;
+
+}
+.carousel-item{
+    border: solid blueviolet 0px;
+    align-content: center;
+}
+
+/*fin carousel del index.html*/
+
 .Titcomocomprar{
         background-color: black;
         color: whitesmoke;
@@ -157,7 +158,7 @@ body {
             display: inline-flex;
             position: absolute;
             padding: 10px;
-            bottom: 50px;
+            top: 130px;
             font-family:sans-serif;
             font-size: 18px;
             text-decoration: none;
@@ -221,6 +222,7 @@ display: inline-block;
 bottom: 10px
 }
 
+/*Desde acá aplican aboutus.html*/
 .aboutusBody{
     background-color: black;
     color: whitesmoke;
@@ -280,6 +282,9 @@ bottom: 10px
             height: 100%;
             border: 0px solid blue}
 
+/*fin aplica al aboutus.html*/
+
+/*inicio aplican al merchandise.html*/
 .merchandiseBody{
     background-color: black;
     color: whitesmoke;
@@ -324,6 +329,10 @@ bottom: 10px
     width: 100%;
     }
 
+/*fin aplican al merchandise.html*/
+
+/*inicio aplican al contact.html*/
+
 .contactBody{
     background-color: black;
     color: whitesmoke;
@@ -331,24 +340,11 @@ bottom: 10px
     .formContact{
             background-image: linear-gradient(black, rgba(245, 245, 245, 0.623));           
     }
+/*fin aplican al contact.html*/
 
+/*inicio aplican al supplier.html*/
 .supplierBody{
     background-color: black;
     color: whitesmoke;
 }
-
-h1{
-    font-style:normal;
-}
-
-h2{
-    font-style:normal;
-}
-
-h3{
-    font-style:normal;
-}
-
-h4{
-    font-style:normal;
-}
+/*fin aplican al supplier.html*/
