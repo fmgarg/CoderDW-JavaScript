@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="es">
+<head class="aboutusHead"><!--bloque 1 BEM-->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>DeTodo.com</title>
+    <title class="aboutusHead__titulo">DeTodo.com: Sobre nosotros</title>
+    <!--Aplicando SEO-->
+    <meta name="description" content="Somos detodo.com tu tienda on line. Acerca de nosotros.">
+    <meta name="keywords"  content="mision, vision, valores, seguridad, ahorros, descuentos">
     <!--Fuente de google-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,21 +17,21 @@
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <!--Mi hoja de estilos-->
-    <link rel="stylesheet" type="text/css" href="../styles/common.css">
+    <link rel="stylesheet" type="text/css" href="../styles/index.css">
 </head>
 <body class="aboutusBody">
-    <header>
+    <header class="aboutusHeader"><!--bloque 2 BEM-->
         <div class="encabezado">
-            <div class="headerTitulo">
+            <div class="aboutusHeader__titulo headerTitulo">
                   <h1>DeTodo.com</h1>
             </div>
-            <div class="Desktop">
+            <div class="aboutusHeader__desksearch Desktop">
                <input type="search" placeholder="buscar productos y servicios..." size="68%">
             </div>
-            <div class="Mobile">
+            <div class="aboutusHeader__celsearch Mobile">
                <input type="search" placeholder="buscar productos y servicios...">
             </div>
-            <form class="d-flex"> <!--Carrito del bootstrap theme-->
+            <form class="aboutusHeater__carrito d-flex"> <!--Carrito del bootstrap theme-->
                <button class="btn btn-outline-dark" type="submit">
                    <i class="bi-cart-fill me-1"></i>
                    Carrito
@@ -36,7 +39,7 @@
                </button>
            </form>
         </div>   
-        <nav class="navbar navbar-expand-lg navbar-light"> <!--nav bar de bootstrap con menú hamburguesa en responsive-->
+        <nav class="aboutusHeader__nav navbar navbar-expand-lg navbar-light"> <!--nav bar de bootstrap con menú hamburguesa en responsive-->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -74,27 +77,26 @@
             </div>
       </nav> 
     </header>  
-    <section class="aboutus">  
+    <section class="aboutusSection aboutus"><!--bloque 3 BEM-->  
             <div class="pizarra">
-                <article class="speech">
+                <article class="aboutusSection__speech speech">
                     <h2 class="pop">Somos una Startup dedicada a la comercialización de productos y servicios de calidad al mejor precio del mercado.</h2>
                 </article>
-                <article class="mision">
+                <article class="aboutusSection__mision mision">
                     <h2>Misión</h2>
                     <p>Nuestra misión es encontrar soluciones competitivas a precios competitivos.</p>
                 </article>
-                <article class="vision">
+                <article class="aboutusSection__vision vision">
                     <h2>Visión</h2>
                     <p>Buscamos ser el mejor proveedor de soluciones del mercado.</p>
                 </article>
-                <article class="valores">
+                <article class="aboutusSection__valores valores">
                     <h2>Valores</h2>
                     <p>Nuestro principal valor es la seguridad en sus operaciones. Ofrecemos una plataforma de pagos confiable y segura para proteger a nuestros clientes.</p>
                 </article>
             </div>
-            <img class="imgPulgares"src="../imagenes/imagen1.jpg">
     </section>
-    <footer class="footer">
+    <footer class="aboutusFooter footer"><!--bloque 4 BEM-->
             <p>Copyright © 2021
             detodo.com™. Todos los derechos reservados.
             </p>

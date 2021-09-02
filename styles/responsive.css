@@ -12,7 +12,7 @@
         .Mobile{
             display: none;
         }
-        .pizarra{
+     /*   .pizarra{
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: 30% 30% 30%;
@@ -22,7 +22,7 @@
             .speech { grid-area:speech;}
             .mision { grid-area:mision;}
             .vision { grid-area:vision; }
-            .valores { grid-area:valores;}
+            .valores { grid-area:valores;}*/
             /* responsive del grid de aboutus.html*/
         .cards {
             display: grid;
@@ -35,7 +35,7 @@
      }
 
      @media (max-width: 991.98px) {
-        .pizarra{
+       /* .pizarra{
             display: grid;
             grid-template-columns: repeat(1, 1fr);
             grid-template-rows: auto auto auto auto;
@@ -47,7 +47,7 @@
             .speech { grid-area:speech;}
             .mision { grid-area:mision;}
             .vision { grid-area:vision; }
-            .valores { grid-area:valores;}
+            .valores { grid-area:valores;} */
 
             .imgPulgares {display: none;}
             /* responsive del grid de aboutus.html*/
