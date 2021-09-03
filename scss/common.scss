@@ -10,18 +10,9 @@ body {
     padding: auto;}
 
 .indexBody{
-    background-color:$fondocolor;
-    color: $letracolor;}
+    background-color:$fondocolor;}
 
-.encabezado{
-    display: flex;
-    flex-direction: row;
-    align-items:flex-start;
-    justify-content: flex-start;
-    margin-top: 3%;
-    margin-bottom: 1%;
 
-}
 
     .headerTitulo{
             display: block;
@@ -64,52 +55,71 @@ body {
 
    /*desde aquí para cambiar los estilos del navbar de bootstrap*/
     .navbar-light .navbar-brand {
-        color: whitesmoke;
+        color: $letracolor;
+        font-size: auto;
       }
       
       .navbar-light .navbar-brand:hover, .navbar-light .navbar-brand:focus {
-        color: whitesmoke;
+        color: $letracolor;
+        font-size: auto;
       }
       
       .navbar-light .navbar-nav .nav-link {
-        color: whitesmoke;
+        color: $letracolor;
+        font-size: auto;
       }
       
       .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
-        color: whitesmoke;
+        color: $letracolor;
+        font-size: auto;
       }
       
       .navbar-light .navbar-nav .nav-link.disabled {
-        color: whitesmoke;
+        color: $letracolor;
+        font-size: auto;
       }
       
       .navbar-light .navbar-nav .show > .nav-link,
       .navbar-light .navbar-nav .active > .nav-link,
       .navbar-light .navbar-nav .nav-link.show,
       .navbar-light .navbar-nav .nav-link.active {
-        color: whitesmoke;
+        color: $letracolor;
+        font-size: auto;
       }
       
       .navbar-light .navbar-toggler {
-        color: whitesmoke;
+        color: $letracolor;
         border-color: rgba(0, 0, 0, 0.1);
+        font-size: auto;
       }
       
-      .navbar-light .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(245, 245, 245)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-      }
       
       .navbar-light .navbar-text {
-        color: whitesmoke;
+        color: $letracolor;
+        font-size: auto;
       }
       
       .navbar-light .navbar-text a {
-        color: whitesmoke;
+        color: $letracolor;
+        font-size: auto;
       }
       
       .navbar-light .navbar-text a:hover, .navbar-light .navbar-text a:focus {
-        color: whitesmoke;
+        color: $letracolor;
+        font-size: auto;
       }
+      .nav-item{
+        border: solid white 0px;
+        weight: 100%;
+        font-size: 22px;
+      }
+      .collapse{
+        border: solid whitesmoke 0px;
+        
+      }
+      .navbar-light .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(245, 245, 245)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); }
+      
 /*fin de los estilos del navbar/
 
 
@@ -129,16 +139,6 @@ body {
 
 
 .btn-whatsapp {
-            display: inline-flex;
-            position: absolute;
-            padding: 10px;
-            top: 130px;
-            font-family:$letra;
-            font-size: 18px;
-            text-decoration: none;
-            color:$letracolor;
-            right: 30px;
-            background-color: green;
             animation-duration: 2s;
             animation-name: aparecer;
             animation-iteration-count: 1;
@@ -161,11 +161,23 @@ body {
                     }
                     }
 
-.img-whatsapp{
-            display: inline-flex;
-            position:row;
-            background-color: green;
-            margin-left: 5px;
+
+.whatsapp {
+  position:fixed;
+  width:60px;
+  height:60px;
+  bottom:40px;
+  right:40px;
+  background-color:#25d366;
+  color:#FFF;
+  border-radius:50px;
+  text-align:center;
+  font-size:30px;
+  z-index:100;
+}
+
+.whatsapp-icon {
+  margin-top:13px;
 }
 
 .footer {
@@ -177,44 +189,140 @@ display: inline-block;
 bottom: 10px
 }
 
+/*desde acá aplica a la sección de ofertas*/
+.ofertasCalientes{
+  border: solid gray 0px; 
+  text-align: center;
+  color: orangered;
+  animation-duration: 2s;
+            animation-name: aparecer;
+            animation-iteration-count: 5;
+            }
+                    @keyframes aparecer {
+                      0% {
+                        opacity: 0;
+                      }
+                      100% {
+                        opacity: 1;
+                      }
+                    }
+
+/*desde acá aplican a form Newsletter*/
+.box {
+  margin: auto
+}
+
+.heading {
+  font-weight: bold;
+  font-size: 66px
+}
+
+.sub-heading {
+  border-top: 1px solid #E0E0E0;
+  border-bottom: 1px solid #E0E0E0;
+  padding: 8px 0 8px 0;
+  margin-top: 20px;
+  margin-bottom: 35px
+}
+
+.carta {
+  padding: 8%;
+  padding-bottom: 30px;
+  padding-top: 35px;
+  margin-top: 60px;
+  margin-bottom: 80px;
+  background-color: #ffffff;
+  border-radius: 0
+}
+
+textarea[name="message"] {
+  resize: none
+}
+
+#e-mail {
+  height: 45px
+}
+
+#message {
+  height: 120px
+}
+
+input.input-box,
+textarea.input-box {
+  background-color: #e0e0e033;
+  border: #616161;
+  color: #000000;
+  padding: 15px auto 15px auto !important;
+  height: 50px !important
+}
+
+input.input-box:focus,
+textarea.input-box:focus {
+  background-color: #212121;
+  color: #ffffff
+}
+
+.rm-border:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none
+}
+
+form .form-control::-webkit-input-placeholder {
+  color: #9E9E9E
+}
+
+::-moz-placeholder {
+  color: #9E9E9E !important
+}
+
+input.btn-black {
+  background-color: #000000;
+  color: #ffffff;
+  height: 50px
+}
+
+.thanks {
+  color: #000000 !important;
+  text-align: center
+}
+
+
+.conditions {
+  color: #BDBDBD;
+  text-align: center
+}
+
 /*Desde acá aplican aboutus.html*/
 .aboutusBody{
   background-color:$fondocolor;
   color: $letracolor;;
 }
 
-.aboutus {
-    font-family:$letra;
-    font-size: 24px;
-    text-align: center;
-    display: block;
-    position: relative;
+.slogan{
+  text-align: center;
+}
+.preguntasFrec{
+  text-align: center;
+  margin-top: 3%;
 }
 
-    .aboutus div{
-            position: absolute;
-            background-color:rgba(0, 0, 0, 0.6) ;
-            padding: 10px;
-            border: solid grey 0px;
-            justify-content: stretch;
-            align-content: stretch;
-            height: 100%;}
 
    /*Aplicando operaciones SASS*/         
  .aboutusSection__mision{
-   width: $ancho/3;
+   width: auto;
    h2{
      font-style: italic;
    }
  }
  .aboutusSection__vision{
-   width: $ancho/3;
+   width: auto;
    h2{
     font-style: italic;
   }
  }
  .aboutusSection__valores{
-   width: $ancho/3;
+   width: auto
    h2{
     font-style: italic;
   }
@@ -222,6 +330,12 @@ bottom: 10px
  .aboutusSection__speech{
    width: $ancho/3;
  }
+
+.btn-link{
+  color: $letracolor;
+  font-family: $letra;
+  font-size: 26px;
+}
 
 .aboutusFooter{
   position: fixed;
@@ -272,16 +386,6 @@ bottom: 10px
     width: 100%;
     }
     .btn-whatsapp2 {
-      display: inline-flex;
-      position: absolute;
-      padding: 10px;
-      top: 120px;
-      font-family:$letra;
-      font-size: 18px;
-      text-decoration: none;
-      color: $letracolor;
-      right: 10px;
-      background-color: green;
       animation: animacion 0.5s linear 1s 3 alternate;
       }
 

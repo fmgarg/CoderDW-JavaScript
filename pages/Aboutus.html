@@ -78,25 +78,132 @@
       </nav> 
     </header>  
     <section class="aboutusSection aboutus"><!--bloque 3 BEM-->  
-            <div class="pizarra">
-                <article class="aboutusSection__speech speech">
-                    <h2 class="pop">Somos una Startup dedicada a la comercialización de productos y servicios de calidad al mejor precio del mercado.</h2>
-                </article>
-                <article class="aboutusSection__mision mision">
-                    <h2>Misión</h2>
-                    <p>Nuestra misión es encontrar soluciones competitivas a precios competitivos.</p>
-                </article>
-                <article class="aboutusSection__vision vision">
-                    <h2>Visión</h2>
-                    <p>Buscamos ser el mejor proveedor de soluciones del mercado.</p>
-                </article>
-                <article class="aboutusSection__valores valores">
-                    <h2>Valores</h2>
-                    <p>Nuestro principal valor es la seguridad en sus operaciones. Ofrecemos una plataforma de pagos confiable y segura para proteger a nuestros clientes.</p>
-                </article>
+            <div class="container">
+                <div class="row mt-3 pt-5 pb-5">
+                    <div class="col">
+                        <h2 class="mb-5 slogan">Somos una Startup dedicada a la comercialización de productos y servicios de calidad al mejor precio del mercado.</h2>
+                        <div id="accordion">
+                            <div class="card" id="pedircuit">
+                                <div class="card-header" id="headingOne">
+                                    <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    ¿Te interesa conocer nuestra misión, visión y valores?
+                                    </button>
+                                    </h5>
+                                </div>
+                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion" style="">
+                                    <div class="card-body">
+                                        <div class="pizarra">
+                                            <article class="aboutusSection__mision mision">
+                                                <h2>Misión</h2>
+                                                <p>Nuestra misión es encontrar soluciones competitivas a precios competitivos.</p>
+                                            </article>
+                                            <article class="aboutusSection__vision vision">
+                                                <h2>Visión</h2>
+                                                <p>Buscamos ser el mejor proveedor de soluciones del mercado.</p>
+                                            </article>
+                                            <article class="aboutusSection__valores valores">
+                                                <h2>Valores</h2>
+                                                <p>Nuestro principal valor es la seguridad en sus operaciones. Ofrecemos una plataforma de pagos confiable y segura para proteger a nuestros clientes.</p>
+                                            </article>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="col">
+                            <h3 class="mb-5 preguntasFrec">Respuestas a preguntas frecuentes:</h3>           
+                            <div id="accordion">
+                                <div class="card">
+                                    <div class="card-header" id="headingTwo">
+                                        <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                        ¿Cómo selecciono la mercadería?
+                                        </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion" style="">
+                                        <div class="card-body">
+                                            <p>
+                                            Cuando visualises el/ los ítem de tu interés, tenes que 
+                                            seleccionar en el botón de "agregar" para que dicho 
+                                            productos se incorpore en tu carrito de compras. Cuando
+                                            termines de elegir tus productos debes seleccionar el carrito
+                                            que está junto a la barra de búsqueda para continuar el proceso.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingThree">
+                                        <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        ¿Cómo es el proceso de compra?
+                                        </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <p>El proceso cuenta con 3 momentos:</p>
+                                            <ol>
+                                            <li>Elección de los productos e incorporación al carrito de compras.</li>
+                                            <li>
+                                                Confirmación de los productos que deses adquirir y elección del método de envío.
+                                            </li>
+                                            <li>
+                                                Elección del medio de pago y pago.
+                                            </li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingFour">
+                                        <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        ¿Qué pasa si me arrepiento de la compra?
+                                        </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <p>
+                                            Se aún no se cumplieron 72 hs., te pedimos que busques todos
+                                            los datos de la operación y tengas tu medio de pago a mano, 
+                                            tenes que contactar a uno de nuestros asesores para que proceda 
+                                            a realizar la anulación de la compra.
+                                            Si ya pasaron 72 hs. desde
+                                            que realizaste la compra contacta a un asesor para que te indique
+                                            los pasos a seguir para la anulación y devolución o rechazo de la entrega.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingFive">
+                                        <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        ¿Cuáles son los medios de pago disponibles?
+                                        </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                                        <div class="card-body">
+                                            <p>
+                                            Trabajamos con todos medios electrónicos, depósito, transferencia y todas las
+                                            opciones que brinda mercadopago.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
     </section>
-    <footer class="aboutusFooter footer"><!--bloque 4 BEM-->
+      <footer class="aboutusFooter footer"><!--bloque 4 BEM-->
             <p>Copyright © 2021
             detodo.com™. Todos los derechos reservados.
             </p>

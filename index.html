@@ -3,7 +3,7 @@
 <head>
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-compatible" content="IE=EDGE"> 
-      <meta name="viewport" content="with=device-width, initial -scale=1.0, shrink-to-fit=no">
+      <meta name="viewport" content="with=device-width, initial-scale=1.0, shrink-to-fit=no">
       <title>DeTodo.com. Encontrás todo y ahorras!</title>
       <!--Aplicando SEO-->
       <meta name="description" content="Somos detodo.com tu tienda on line. La más amplia variedad de productos y servicios de calidad al mejor precio.">
@@ -42,7 +42,7 @@
         </form>
    </div> 
    <div>
-   <nav class="navbar navbar-expand-lg navbar-light"> <!--nav bar de bootstrap con menú hamburguesa en responsive-->
+    <nav class="aboutusHeader__nav navbar navbar-expand-lg navbar-light"> <!--nav bar de bootstrap con menú hamburguesa en responsive-->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -111,6 +111,10 @@
    </section>
    <!--Theme ecommerce de bootstrap adaptado a mi sitio https://startbootstrap.com/template/shop-homepage-->
    <section class="py-5">
+        <div>
+        <h2 class="ofertasCalientes">PRODUCTOS EN OFERTA. QUEDAN POCAS UNIDADES!!
+        </h2>
+        </div>
       <div class="container px-4 px-lg-5 mt-5">
           <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
               <div class="col mb-5">
@@ -313,15 +317,53 @@
       </div>
   </section>
          <div>
-      <div class="btn-whatsapp">
-         <p>Consultar por chat </p>
-         <img class="img-whatsapp" src="./imagenes/whatsapp.jpg" width="60" heigth="20">     
-      </div>
-   </div>
-   <footer class="footer">
-         <p>Copyright © 2021
+            <div class="whatsapp btn-whatsapp2" target="_blank">
+                <img src="./imagenes/whatsapp.svg" width="30">
+            </div>
+        </div>
+
+        <div class="bg-grey"> <!--FORM ADAPTADO DE https://bbbootstrap.com/snippets/subscribe-our-newsletter-form-discount-coupon-80938638-->
+            <div class="container">
+                <div class="row justify justify-content-center">
+                    <div class="col-12 col-lg-9 col-xl-8">
+                        <form class="">
+                            <div class="carta">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-9 col-11">
+                                        <div class="row mt-0">
+                                            <div class="col-md-12 ">
+                                                <h4 class="text-center heading">Ahorrá un 10%</h4>
+                                                <p class="text-center sub-heading">Si te suscribís a nuestro newsletter te regalamos un descuento para tu próxima compra.</p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row mb-3">
+                                            <div class="col-md-12 mb-0"> <input id="e-mail" type="text" placeholder="Ingresá tu email" name="email" class="form-control input-box rm-border text-center"> </div>
+                                        </div>
+                                        <div class="form-group row justify-content-center mb-0">
+                                            <div class="col-md-12 px-3"> <input type="submit" value="Suscribirse!" class="btn btn-block btn-black rm-border"> </div>
+                                        </div>
+                                        <div class="form-group row justify-content-center mb-0">
+                                            <div class="col-md-12 px-3 mt-4"> <a href="#">
+                                                    <p class="thanks"></p>
+                                                </a> </div>
+                                        </div>
+                                        <div class="form-group row justify-content-center mb-0">
+                                            <div class="col-md-12 px-3">
+                                                <p class="conditions">* Tope de descuento $1.000.-</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+   <footer class="footer">  
+        <p>Copyright © 2021
          detodo.com™. Todos los derechos reservados.
-         </p>
+        </p>
    </footer>
    <!--Scripts de bootstrap-->
    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
