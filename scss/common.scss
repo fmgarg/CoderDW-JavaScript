@@ -52,6 +52,9 @@ body {
         max-width: 40%;
         background-color: rgba(245, 245, 245, 0);
     }
+    .btn-outline-dark {
+      color: #f85d03;
+    }
 
    /*desde aquí para cambiar los estilos del navbar de bootstrap*/
     .navbar-light .navbar-brand {
@@ -133,6 +136,15 @@ body {
 .carousel-item{
     border: solid blueviolet 0px;
     align-content: center;
+}
+.star{
+  border: solid greenyellow 0px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.text-muted{
+  text-decoration: line-through;
 }
 
 /*fin carousel del index.html*/
