@@ -78,46 +78,29 @@
       </nav> 
     </header>
             <form class="formContact">
-                <fieldset>
-                    <legend>Formulario de contacto</legend>
-                    <br>
-                    <label for="sexo:">Seleccione el motivo de su contacto: </label>
+                <fieldset class="formulario">
+                    <legend class="formTit">Formulario de contacto</legend>
+                    <label class="FormItem" for="sexo:">Seleccione el motivo de su contacto: </label>
+                    <label class="FormItem" for="sexo">Dudas y consultas</label>
                     <input type="radio" name="sexo" id="man" value="man" /> <!--el valor name hace que sean excluyentes si es igual-->
-                    <label for="sexo">Dudas y consultas</label>
+                    <label class="FormItem" for="sexo">Reclamos</label>
                     <input type="radio" name="sexo" value="mujer" id="woman" />
-                    <label for="sexo">Reclamos</label>
-                    <br>
-                    <br>
-
-
-                    <label for="name">Apellido y nombres</label>
-                    <br>
-                    <input type="text" name="name" placeholder="Perez, Juan Ignacio" required>
-                    <br>
-                    <label for="phone">Teléfono</label>
-                    <br>
-                    <input type="number" name="phone" placeholder="+549 11 2222 5555" required> <!--el valor "required" hace que sea requerido rellenar el campo-->
-                    <br>
-                    <label for="email">e-mail</label>
-                    <br>
-                    <input type="email" name="email" placeholder="juanperez@gmail.com">
-                    <br>
-                    <label for="comentarios">Comentarios</label>
-                    <br>
-                    <textarea name="comentarios" cols="30" rows="10" placeholder="Escriba aquí sus comentarios" required></textarea>></textarea>
-                    <br>
-                    <label for="contact">De que forma desea ser contactado por nosotros:</label>
-                    <br>
-                    <select name="talles">
+                    <label class="FormItem" for="name">Apellido y nombres</label>
+                    <input class="FormItem" type="text" name="name" placeholder="Perez, Juan Ignacio" required>
+                    <label class="FormItem" for="phone">Teléfono</label>
+                    <input class="FormItem" type="number" name="phone" placeholder="+549 11 2222 5555" required> <!--el valor "required" hace que sea requerido rellenar el campo-->
+                    <label class="FormItem" for="email">e-mail</label>
+                    <input class="FormItem" type="email" name="email" placeholder="juanperez@gmail.com">
+                    <label class="FormItem" for="comentarios">Comentarios</label>
+                    <textarea class="FormItem" name="comentarios" cols="30" rows="10" placeholder="Escriba aquí sus comentarios" required></textarea>></textarea>
+                    <label class="FormItem" for="contact">De que forma desea ser contactado, seleccione:</label>
+                    <select class="FormItem" name="talles">
                         <option value="email">e-mail</option>
                         <option value="phone">Whatsapp</option>
                         <option value="both">Ambos</option>
                     </select>
-                    <input type="submit" value="enviar el formulario"/>            
-                    <br>
-                    </fieldset>
-                <br>
-
+                    <input class="FormItem" type="submit" value="enviar el formulario"/>            
+                </fieldset>
             </form>    
             <footer class="footer">
                     <p>Copyright © 2021

@@ -349,6 +349,15 @@ input.btn-black {
 .formContact {
   background-image: linear-gradient(black, rgba(245, 245, 245, 0.623)); }
 
+.formulario {
+  display: block;
+  margin-left: 25%;
+  margin-right: 25%;
+  border: solid whitesmoke 0px; }
+
+.FormItem {
+  width: 100%; }
+
 /*fin aplican al contact.html*/
 /*inicio aplican al supplier.html*/
 .supplierBody {
