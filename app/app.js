@@ -41,6 +41,17 @@ create(producto1);
 create(producto2);
 create(producto3);
 
+//creación de elementos productos en el DOM de merchandise.html
+
+for (const producto of productos) {
+  let contenedor = document.createElement("div");
+  contenedor.innerHTML = `<h3> ID: ${producto.ID}</h3>
+                          <p>  Producto: ${producto.nombre}</p>
+                          <b> $ ${producto.precio}</b>`;
+  document.body.appendChild(contenedor);
+}
+
+
 
 //metodo para allar un producto
 
@@ -63,7 +74,7 @@ const findOne = (nombre) => {
 //console.log (findOne ('pendrive'));
 
 
-alert ("estos son los productos seleccionados: "+"pendrive"+", "+"notebook"+", "+"MytvStick"+" por un valor de usd1100");
+//alert ("estos son los productos seleccionados: "+"pendrive"+", "+"notebook"+", "+"MytvStick"+" por un valor de usd1100");
 
 //for (let index = 0; index < Producto.length; index++){
 
@@ -79,7 +90,7 @@ alert ("estos son los productos seleccionados: "+"pendrive"+", "+"notebook"+", "
 
 //console.log(getAll())
 
-const pagoCuotas = (numeroDeCuotas, importe) => {
+/*const pagoCuotas = (numeroDeCuotas, importe) => {
 
   switch (Number(numeroDeCuotas)) {
       case 1:
@@ -107,5 +118,5 @@ let cuotas = parseInt(prompt("Por favor, ingrese 1, 3, 6, 9 o 12 cuotas"));
 
 pagoCuotas(cuotas, 1100)
 
-
+*/
 
