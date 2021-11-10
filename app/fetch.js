@@ -26,7 +26,7 @@ fetch (URL)
                             <!--<div>
                                 <h6>Descripcion:</h6>
                                 <p class="text-justify">${article.description}</p>
-                            </div>-->
+                            </div>--> 
                     </div>
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                         <div class="text-center">
