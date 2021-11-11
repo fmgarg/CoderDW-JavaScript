@@ -324,6 +324,12 @@ input.btn-black {
 .card img {
   max-width: 100%; }
 
+.card-img-top{
+  max-height: 270px;
+  min-height: 270px;
+
+}
+
 .card .text {
   padding: 0 20px 20px; }
 
