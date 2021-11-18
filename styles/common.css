@@ -340,6 +340,16 @@ input.btn-black {
   padding: 10px;
   width: 100%; }
 
+.description{
+  height: 25px;
+  overflow: hidden;
+  transition: heigth .3s ease-in .3s;
+}
+
+.description:hover {
+  height: 100%;
+}
+
 .btn-whatsapp2 {
   animation: animacion 0.5s linear 1s 3 alternate; }
 

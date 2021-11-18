@@ -24,21 +24,22 @@ fetch (URL)
                                 </div>
                                     <h4>PRECIO: $ ${article.price}.-</h4>
                                     <h5>(Stock disponible ${article.rating.count} unidades)</h5>
-                                    <h6>Elija la cantidad que desea adquirir:</h6>
                             </div>
-                            <!--<div>
-                                <h6>Descripcion:</h6>
+                            <div class="card-text description">
                                 <p class="text-justify">${article.description}</p>
-                            </div>--> 
+                            </div>
                     </div>
                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                         <div class="text-center">
-                                <select id="select-count-${article.id}">
-                                        <option value = "1">1</option>
-                                        <option value = "2">2</option>
-                                        <option value = "3">3</option>
-                                </select>
-                                <button id="btn-add-${article.id}" class="btn btn-outline-dark mt-auto">agregar</button>
+                                
+                                <button id="btn-add-${article.id}" class="btn btn-outline-dark mt-auto">
+                                        <select id="select-count-${article.id}">
+                                                <option value = "1">1</option>
+                                                <option value = "2">2</option>
+                                                <option value = "3">3</option>
+                                        </select>
+                                        agregar
+                                </button>
                         </div>
                     </div>
                 </div>
@@ -108,11 +109,15 @@ fetch (URL)
 
                 $('#contenedor-carrito').append (
                 `
-                
-                <div> $(el.item.nombre) - Cantidad: $(el.item.cantidad)</div>
+                    <label class="row col-xs-1">
+                        <input type="checkbox" value="">
+                        <p> ${el.item.title} - Cantidad: ${el.cantidad} - Precio unitario: USD ${el.item.price}.-</p>
+                    </label>
 
                 `
                 )
+
+                
             }
         }
         
