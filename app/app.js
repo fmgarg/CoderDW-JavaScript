@@ -111,7 +111,7 @@ fetch (URL)
                 `
                     <label class="row col-xs-1">
                         <input type="checkbox" value="">
-                        <p> ${el.item.title} - Cantidad: ${el.cantidad} - Precio unitario: USD ${el.item.price}.-</p>
+                        <p> ${el.item.title} - Cantidad: ${el.cantidad} - Precio unitario: USD${el.item.price}.-</p>
                     </label>
 
                 `
