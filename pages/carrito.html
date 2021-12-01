@@ -76,11 +76,29 @@
           </div>
     </nav> 
     </header>
-        <div class="container-fluid">
-            <h5>Este es tu carrito de compras</h5>
-            <div id="contenedor-carrito">
-            </div>
-        </div>
+<!-------------------------carrito de bootstrap------------------------------>
+
+<table class="table table-borderless table-dark">
+    <thead>
+      <tr class="text-primary">
+        <th scope="col">Id</th>
+        <th scope="col">Producto</th>
+        <th scope="col">(Stock disponible)</th>
+        <th scope="col">Cantidad solicitada</th>
+        <th scope="col">Precio por unidad</th>
+        <th scope="col">Eliminar</th>
+      </tr>
+    </thead>
+    <tbody id="contenedor-carrito">
+      <!--aca es el render del carrito-->
+    </tbody>
+</table>
+<div class="container">
+  <h3 class="itemCartTotal"> Total: $</h3>
+  <button id="btnBuy" class="btn btn-outline-dark">Finalizar la compra</button>
+</div>
+
+<!-------------------------carrito de bootstrap------------------------------>
         <footer class="aboutusFooter footer"><!--bloque 4 BEM-->
             <p>Copyright © 2021
                 DeTito.com™. Todos los derechos reservados.

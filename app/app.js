@@ -1,3 +1,4 @@
+
 const URL = 'https://fakestoreapi.com/products'
 
 fetch (URL) 
@@ -6,123 +7,155 @@ fetch (URL)
 
     .then ( data => {
 
-    for (const article of data) {
+                    for (const article of data) {
 
-        let count = 1
+                            $('#contenedor-lista-productos').append(
+                                `
+                                    <div class="card">
+                                        <img class="card-img-top" src="${article.image}" alt="se esperaba una imagen" />
+                                        <div class="card-body p-4">
+                                                <div class="text-center">
+                                                    <h3 class="fw-bolder"> ${article.title}</h3>
+                                                    <div class="star d-flex justify-content-center small text-warning mb-2">
+                                                        <div class="bi-star-fill"></div>
+                                                        <div class="text-center"> <h5> Valoracion ${article.rating.rate} </h5></div>
+                                                        <div class="bi-star-fill"></div>
+                                                    </div>
+                                                        <h4>PRECIO: $ ${article.price}.-</h4>
+                                                        <h5>(Stock disponible ${article.rating.count} unidades)</h5>
+                                                </div>
+                                                <div class="card-text description">
+                                                    <p class="text-justify">${article.description}</p>
+                                                </div>
+                                        </div>
+                                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                            <div class="text-center">
+                                                    
+                                                    <button id="btn-add-${article.id}" class="btn btn-outline-dark mt-auto btnAddCart">
+                                                        <select id="select-count-${article.id}">
+                                                        <option value = "1">1</option>
+                                                        <option value = "2">2</option>
+                                                        <option value = "3">3</option>
+                                                        </select>    
+                                                        agregar
+                                                    </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                `
+                            )
 
-        $('#contenedor-lista-productos').append(
-            `
-                <div class="card">
-                    <img class="card-img-top" src="${article.image}" alt="se esperaba una imagen" />
-                    <div class="card-body p-4">
-                            <div class="text-center">
-                                <h3 class="fw-bolder"> ${article.title}</h3>
-                                <div class="star d-flex justify-content-center small text-warning mb-2">
-                                    <div class="bi-star-fill"></div>
-                                    <div class="text-center"> <h5> Valoracion ${article.rating.rate} </h5></div>
-                                    <div class="bi-star-fill"></div>
-                                </div>
-                                    <h4>PRECIO: $ ${article.price}.-</h4>
-                                    <h5>(Stock disponible ${article.rating.count} unidades)</h5>
-                            </div>
-                            <div class="card-text description">
-                                <p class="text-justify">${article.description}</p>
-                            </div>
-                    </div>
-                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                        <div class="text-center">
+                            let count = 1
                                 
-                                <button id="btn-add-${article.id}" class="btn btn-outline-dark mt-auto">
-                                        <select id="select-count-${article.id}">
-                                                <option value = "1">1</option>
-                                                <option value = "2">2</option>
-                                                <option value = "3">3</option>
-                                        </select>
-                                        agregar
-                                </button>
-                        </div>
-                    </div>
-                </div>
-            `
-            )
-
-            $(`#select-count-${article.id}`).change(( event ) => {
-
-                count = +event.target.value
-            })
+                                $(`#select-count-${article.id}`).change(( event ) => {
+                                    count = +event.target.value
+                                })
+                                
+                                $(`#btn-add-${article.id}`).on('click', () => {
+                                    const id = article.id
+                                    const title = article.title
+                                    const price = article.price
 
 
-            $(`#btn-add-${article.id}`).on('click', () => {
+                                    const itemCarrito = new ItemCarrito(id, title, price)
+                                    addItemCarrito( itemCarrito )
+                                })
+                        
+                    }
 
-                //console.log (`Agregar ${count} de ${JSON.stringify(article)}`)
+                    
+                    class ItemCarrito {
+                        constructor (id, title, price) {
+                            this.id = id
+                            this.title = title
+                            this.price = price
+                        }
+                    }
+                    
+                    //lista del carrito
+                    let carrito = JSON.parse(localStorage.getItem('carrito')) || []
 
-               const itemCarrito = new ItemCarrito(count, article)
+                    //metodo que retorna la lista del carrito
+                  //const getAll = () =>{
+                    //    return carrito
+                    //}
 
-               // console.log( itemCarrito )
+                    //metodo para agregar los itemCarrito al carrito
+                    const addItemCarrito = (id) => {
+                        const itemCarrito = carrito.find( id => id === id['id'])
+                        
+                          
+                            carrito.push (id)
+                            console.log( carrito)
+                       
+                                
+                        localStorage.setItem('carrito', JSON.stringify(carrito))  
+                        
+                        renderCarrito ()
+                    }
+                    
+                    //metodo para hallar un itemCarrito por id
+                    const findOne = (id) => {
 
-                addItemCarrito( itemCarrito )
-            })
-      
-        }
+                        const itemCarrito = carrito.find( itemCarrito => itemCarrito.id === id)
+                    
+                        if (!itemCarrito) {
+                            throw new Error(`No existe el itemCarrito de id #${id}`)
+                        }
+                    
+                        return itemCarrito
+                    
+                    }
 
-        const carrito = JSON.parse(localStorage.getItem('carrito')) || []
+                    //Metodo para eliminar un itemCarrito
 
-        class ItemCarrito {
+                    const remove = (id) => {
 
-            constructor (cantidad, item) {
-                
-                this.cantidad = cantidad
-                
-                this.item = item
+                        const itemCarrito = findOne(id)
+                        const index = carrito.indexOf(itemCarrito)
+                        carrito.splice( index, 1)
+                        localStorage.setItem('carrito', JSON.stringify(carrito))
+                    
+                    }
 
-            }
-        }
-    
-        const addItemCarrito = (item) => {
-
-            const itemCarrito = carrito.find( el => el.item === item['item'])
-            
-            if (!itemCarrito) {
-                
-                carrito.push (item)
-
-                console.log( carrito)
-
-            } else {
-            
-            itemCarrito ['cantidad'] = itemCarrito
-
-            console.log (itemCarrito)
-
-            }
-            
-            localStorage.setItem('carrito', JSON.stringify(carrito))
-
-            
-        }
-
-        const renderCarrito = () => {
-
-            $('#contenedor-carrito').empty()
-            
-            for (let el of carrito) {
-
-                $('#contenedor-carrito').append (
-                `
-                    <label class="row col-xs-1">
-                        <input type="checkbox" value="">
-                        <p> ${el.item.title} - Cantidad: ${el.cantidad} - Precio unitario: USD${el.item.price}.-</p>
-                    </label>
-
-                `
-                )
-
-                
-            }
-        }
-        
-        renderCarrito ()
+                    //Metodo para agregar 
+                    const renderCarrito = () => {
+                        $('#contenedor-carrito').empty()
+                        for (let itemCarrito of carrito) {
+                            $('#contenedor-carrito').append (
+                            `
+                            <tr>
+                                <th scope="row" class="table__ID">${itemCarrito.id}</th>
+                                <td id="table-producto"> ${itemCarrito.title}</td>
+                                    <img src="" alt="">
+                                
+                                <td id="table-cantidad"> 
+                                    <form>    
+                                    <input type="number" name="apples" min="1" value="1">
+                                    </form>
+                                </td>
+                                <td id="table-precio">${itemCarrito.price}</td>
+                                <td><button id="btnDel${itemCarrito.id}" class="btn btnDel btn-outline-dark btn-danger">X</button></td>
+                            </tr>
+                            `
+                            ) 
+                            
+                            //continuar aqui. Metodo para obtener elementos del DOM
+                            let btnDel = document.getElementsByClassName ("btnDel");
+                            
+                            $(`#btnDel${itemCarrito.id}`).on('click', () => {
+                                console.log (itemCarrito.id)
+                                remove(itemCarrito.id)
+                                document.location.reload ()
+                                alert('producto eliminado')
+                            })
+                            //hasta aqui
+                        }
+                    }
+                            
+                    renderCarrito ()
+                    
+                    
+                    
     
     })
-
-    
