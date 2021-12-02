@@ -55,9 +55,11 @@ fetch (URL)
                                     const id = article.id
                                     const title = article.title
                                     const price = article.price
-
-
-                                    const itemCarrito = new ItemCarrito(id, title, price)
+                                    const stock = article.rating.count
+                                    const cantidad = count
+                                    const itemCarrito = new ItemCarrito(id, title, price, stock, cantidad)
+                                    
+                                    
                                     addItemCarrito( itemCarrito )
                                 })
                         
@@ -65,10 +67,13 @@ fetch (URL)
 
                     
                     class ItemCarrito {
-                        constructor (id, title, price) {
+                        constructor (id, title, price, stock, cantidad, article) {
                             this.id = id
                             this.title = title
                             this.price = price
+                            this.stock = stock
+                            this.cantidad = cantidad
+                            this.article = article
                         }
                     }
                     
@@ -81,12 +86,19 @@ fetch (URL)
                     //}
 
                     //metodo para agregar los itemCarrito al carrito
-                    const addItemCarrito = (id) => {
-                        const itemCarrito = carrito.find( id => id === id['id'])
+                    const addItemCarrito = (article) => {
+                        const itemCarrito = carrito.find( itemCarrito => itemCarrito.id === article.id)
                         
                           
-                            carrito.push (id)
-                            console.log( carrito)
+                        if (itemCarrito) {
+                            console.log(carrito)
+                            alert('el producto ya existe en su carrito')
+                    
+                        } else {
+                            
+                            carrito.push(article)
+                            console.log(carrito)
+                        }
                        
                                 
                         localStorage.setItem('carrito', JSON.stringify(carrito))  
@@ -128,12 +140,8 @@ fetch (URL)
                                 <th scope="row" class="table__ID">${itemCarrito.id}</th>
                                 <td id="table-producto"> ${itemCarrito.title}</td>
                                     <img src="" alt="">
-                                
-                                <td id="table-cantidad"> 
-                                    <form>    
-                                    <input type="number" name="apples" min="1" value="1">
-                                    </form>
-                                </td>
+                                    <td id="table-cantidad"> ${itemCarrito.stock}</td>
+                                <td id="table-cantidad"> ${itemCarrito.cantidad}</td>
                                 <td id="table-precio">${itemCarrito.price}</td>
                                 <td><button id="btnDel${itemCarrito.id}" class="btn btnDel btn-outline-dark btn-danger">X</button></td>
                             </tr>
