@@ -163,9 +163,25 @@ fetch (URL)
                         }
 
                         carritoTotal ()
+                        //carritoCount ()
 
                         
                     }
+                    /*
+                    function carritoCount () {
+                        
+                        let TotalC = 0;
+                        const itemCartTotal = document.querySelector ('#totalCartCount')
+                        carrito.forEach((itemCarrito) => {
+                            const precioC = itemCarrito.cantidad
+                            TotalC = TotalC += itemCarrito.cantidad                        
+                        });
+
+                        $('#totalCartCount').append ( `
+                                                    <p class="borrar">${TotalC}</p>
+                                                `)
+                    }
+                    */
 
                     function carritoTotal () {
                         
@@ -176,10 +192,14 @@ fetch (URL)
                             Total = Total += precio*itemCarrito.cantidad                        
                         });
 
-                        $('#totalPrice').append ( `
-                                                    <h3 class="borrar">Total $${Total}</h3>
+                       
+                        
+                        $('#totalPrice').empty().append ( `
+                                                    <p class="borrar">$${Total}</p>
                                                 `)
+
                     }
+
 
                     renderCarrito ()
 
