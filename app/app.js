@@ -124,6 +124,7 @@ fetch (URL)
                         carrito.splice( index, 1)
                         localStorage.empty
                         localStorage.setItem('carrito', JSON.stringify(carrito))
+
                         
                     
                     }
@@ -154,7 +155,7 @@ fetch (URL)
                                 console.log (itemCarrito.id)
                                 remove(itemCarrito.id)
                                 
-                                renderCarrito ()
+                                document.location.reload()
                                 console.log('producto eliminado')
                                 //cartTotalPrice()
                             })
@@ -167,13 +168,17 @@ fetch (URL)
                     }
 
                     function carritoTotal () {
+                        
                         let Total = 0;
                         const itemCartTotal = document.querySelector ('#totalPrice')
                         carrito.forEach((itemCarrito) => {
                             const precio = itemCarrito.price
                             Total = Total += precio*itemCarrito.cantidad                        
                         });
-                        $('#totalPrice').append ( `Total $${Total}`)
+
+                        $('#totalPrice').append ( `
+                                                    <h3 class="borrar">Total $${Total}</h3>
+                                                `)
                     }
 
                     renderCarrito ()
