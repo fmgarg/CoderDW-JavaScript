@@ -29,14 +29,10 @@ fetch (URL)
                                                 </div>
                                         </div>
                                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                            <input id="select-count-${article.id}" type="number" min="1" value="1" max="${article.rating.count}" />
                                             <div class="text-center">
                                                     
-                                                    <button id="btn-add-${article.id}" class="btn btn-outline-dark mt-auto btnAddCart">
-                                                        <select id="select-count-${article.id}">
-                                                        <option value = "1">1</option>
-                                                        <option value = "2">2</option>
-                                                        <option value = "3">3</option>
-                                                        </select>    
+                                                    <button id="btn-add-${article.id}" class="btn btn-outline-dark mt-auto btnAddCart">   
                                                         agregar
                                                     </button>
                                             </div>
@@ -50,6 +46,8 @@ fetch (URL)
                                 $(`#select-count-${article.id}`).change(( event ) => {
                                     count = +event.target.value
                                 })
+
+                                console.log(count)
                                 
                                 $(`#btn-add-${article.id}`).on('click', () => {
                                     const id = article.id
@@ -80,10 +78,6 @@ fetch (URL)
                     //lista del carrito
                     let carrito = JSON.parse(localStorage.getItem('carrito')) || []
 
-                    //metodo que retorna la lista del carrito
-                  //const getAll = () =>{
-                    //    return carrito
-                    //}
 
                     //metodo para agregar los itemCarrito al carrito
                     const addItemCarrito = (article) => {
@@ -92,7 +86,9 @@ fetch (URL)
                           
                         if (itemCarrito) {
                             console.log(carrito)
-                            alert('el producto ya existe en su carrito')
+                            itemCarrito['cantidad'] = article.cantidad
+                            itemCarrito['price'] = article.price
+                            console.log('el producto ya existe en su carrito')
                     
                         } else {
                             
@@ -126,9 +122,11 @@ fetch (URL)
                         const itemCarrito = findOne(id)
                         const index = carrito.indexOf(itemCarrito)
                         carrito.splice( index, 1)
+                        localStorage.empty
                         localStorage.setItem('carrito', JSON.stringify(carrito))
                     
                     }
+                    
 
                     //Metodo para agregar 
                     const renderCarrito = () => {
@@ -140,30 +138,124 @@ fetch (URL)
                                 <th scope="row" class="table__ID">${itemCarrito.id}</th>
                                 <td id="table-producto"> ${itemCarrito.title}</td>
                                     <img src="" alt="">
-                                    <td id="table-cantidad"> ${itemCarrito.stock}</td>
-                                <td id="table-cantidad"> ${itemCarrito.cantidad}</td>
-                                <td id="table-precio">${itemCarrito.price}</td>
+                                    <td id="table-stock"> ${itemCarrito.stock}</td>
+                                <td id="table-cantidad-" class="shoppingCartPlantQuantity">${itemCarrito.cantidad}</td>
+                                <td id="table-precio-" class="shoppingCartPlantPrice">${itemCarrito.price}</td>
+                                <td id="table-subtotal-${itemCarrito.id}"></td>
                                 <td><button id="btnDel${itemCarrito.id}" class="btn btnDel btn-outline-dark btn-danger">X</button></td>
                             </tr>
                             `
-                            ) 
+                            )
                             
-                            //continuar aqui. Metodo para obtener elementos del DOM
+                            //Metodo para obtener elementos del DOM
                             let btnDel = document.getElementsByClassName ("btnDel");
                             
                             $(`#btnDel${itemCarrito.id}`).on('click', () => {
                                 console.log (itemCarrito.id)
                                 remove(itemCarrito.id)
-                                document.location.reload ()
-                                alert('producto eliminado')
+                                renderCarrito ()
+                                console.log('producto eliminado')
+                                //cartTotalPrice()
                             })
-                            //hasta aqui
+    
                         }
+
+                        
                     }
-                            
+                    
                     renderCarrito ()
+
+                    //metodo que suma id= y devuelve otro array con id y total de cada id del array carrito
+                    let subtotal = {};
+	                for (let cuenta of carrito){
+            		    if(!subtotal['id_'+cuenta.id]){
+			                subtotal['id_'+cuenta.id] = 0;
+		                }
+		                subtotal['id_'+cuenta.id] += (cuenta.price *= cuenta.cantidad);
+	                }
+	                console.log(subtotal);
+                    console.log (carrito)
                     
+
+                    /*
+                    //metodo que suma todos los price de un array y devuelve un array con un objeto con el total
+                    let total = {};
+	                for (let cuenta of subtotal){
+            		    if(!total['totalCart']){
+			                total['totalCart'] = 0;
+		                }
+		                total['totalCart'] += cuenta.price;
+	                }
+	                console.log(total);
+                    alert(total)
+                    */
+
+
+                   /*//suma por id de productos ok
+                    let suma = {};
+	                for (let cuenta of carrito){
+            		    if(!suma['producId_'+cuenta.id*cuenta.count]){
+			                suma['producId_'+cuenta.id] = 0;
+		                }
+		                suma['producId_'+cuenta.id] += cuenta.price;
+	                }
+	                console.log(suma);
+                    */
+
+                    /*
+                    function total (){
+                        carrito.array.forEach(element => {
+                            let subtotal = carrito.reduce((sum, value) => (typeof value.price == "number" ? sum + value.price : sum), 0);
+                        });
+                    }
                     
+                    console.log(parseInt(total))
+                    */
+
+
+                    // Precio total del carrito
+                    /*
+                    function cartTotalPrice() {
+                    let totalCount = 0;
+                    const totalPrice = document.querySelector( '.total-price' );
+                    const shoppingCartPlants = document.querySelectorAll( '.shoppingCartPlant' );
                     
+                    shoppingCartPlants.forEach( ( shoppingCartPlant ) => {
+
+                        let plantCartQuantityElement = 1
+                        $(`#table-cantidad-`).change(( event ) => {
+                            n1 = +event.target.value
+                        })
+
+                        const plantCartPriceElement = document.getElementById("table-precio-");
+                        const plantCartPrice = Number( plantCartPriceElement.value);
+
+                        const plantCartQuantity = Number( plantCartQuantityElement.value );
+
+                        totalCount += plantCartPrice * plantCartQuantity;
+                    });
+
+                    totalPrice.innerHTML = `$${totalCount}`;
+                    };
+
+                    console.log(cartTotalPrice)
+                    */
+
+                    //const plantCartPriceElement = document.getElementById("table-cantidad-");
+                    //const plantCartPrice = parseInt(plantCartPriceElement);
+                    //console.log(plantCartPrice)
+                    
+                    //Metodo para obtener el subtotal
+                    /*
+                    let n1 = 1
+
+                    $(`#table-cantidad-${itemCarrito.id}`).change(( event ) => {
+                        n1 = +event.target.value
+                    })
+
+                    let n2 = document.getElementById("table-precio-${itemCarrito.id}");
+                    let rtdo = n1*n2;
+                    alert(rtdo);
+                    */                    
     
     })

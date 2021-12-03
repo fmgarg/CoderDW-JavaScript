@@ -381,3 +381,8 @@ input.btn-black {
   color: whitesmoke; }
 
 /*fin aplican al supplier.html*/
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+  opacity: 1;
+}
