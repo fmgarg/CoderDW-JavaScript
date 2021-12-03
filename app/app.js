@@ -124,6 +124,7 @@ fetch (URL)
                         carrito.splice( index, 1)
                         localStorage.empty
                         localStorage.setItem('carrito', JSON.stringify(carrito))
+                        
                     
                     }
                     
@@ -139,9 +140,8 @@ fetch (URL)
                                 <td id="table-producto"> ${itemCarrito.title}</td>
                                     <img src="" alt="">
                                     <td id="table-stock"> ${itemCarrito.stock}</td>
-                                <td id="table-cantidad-" class="shoppingCartPlantQuantity">${itemCarrito.cantidad}</td>
+                                <td id="table-cantidad-${itemCarrito.id}" class="shoppingCartPlantQuantity">${itemCarrito.cantidad}</td>
                                 <td id="table-precio-" class="shoppingCartPlantPrice">${itemCarrito.price}</td>
-                                <td id="table-subtotal-${itemCarrito.id}"></td>
                                 <td><button id="btnDel${itemCarrito.id}" class="btn btnDel btn-outline-dark btn-danger">X</button></td>
                             </tr>
                             `
@@ -153,6 +153,7 @@ fetch (URL)
                             $(`#btnDel${itemCarrito.id}`).on('click', () => {
                                 console.log (itemCarrito.id)
                                 remove(itemCarrito.id)
+                                
                                 renderCarrito ()
                                 console.log('producto eliminado')
                                 //cartTotalPrice()
@@ -160,31 +161,53 @@ fetch (URL)
     
                         }
 
+                        carritoTotal ()
+
                         
                     }
-                    
+
+                    function carritoTotal () {
+                        let Total = 0;
+                        const itemCartTotal = document.querySelector ('#totalPrice')
+                        carrito.forEach((itemCarrito) => {
+                            const precio = itemCarrito.price
+                            Total = Total += precio*itemCarrito.cantidad                        
+                        });
+                        $('#totalPrice').append ( `Total $${Total}`)
+                    }
+
                     renderCarrito ()
 
-                    //metodo que suma id= y devuelve otro array con id y total de cada id del array carrito
-                    let subtotal = {};
-	                for (let cuenta of carrito){
-            		    if(!subtotal['id_'+cuenta.id]){
-			                subtotal['id_'+cuenta.id] = 0;
-		                }
-		                subtotal['id_'+cuenta.id] += (cuenta.price *= cuenta.cantidad);
-	                }
-	                console.log(subtotal);
-                    console.log (carrito)
-                    
+                    //console.log(typeof carritoTotal)
 
+
+                    //localStorage.setItem('itemtotal', JSON.stringify(itemtotal))
+
+                    //let total = JSON.parse(localStorage.getItem('itemtotal')) || []
+
+                    //metodo que suma id= y devuelve otro array con id y total de cada id del array carrito
                     /*
+                    let itemtotal = {};
+	                for (let cuenta of carrito){
+            		    if(!itemtotal['id_'+cuenta.id]){
+			                itemtotal['id_'+cuenta.id] = 0;
+		                }
+		                itemtotal['id_'+cuenta.id] += cuenta.price *= cuenta.cantidad;
+	                }
+	                console.log(typeof itemtotal);
+
+                    console.log (carrito)
+                    */
+
+                    
                     //metodo que suma todos los price de un array y devuelve un array con un objeto con el total
-                    let total = {};
-	                for (let cuenta of subtotal){
+                    /*
+                    let totaltotal = {};
+	                for (let suma of total){
             		    if(!total['totalCart']){
 			                total['totalCart'] = 0;
 		                }
-		                total['totalCart'] += cuenta.price;
+		                total['totalCart'] += suma.price;
 	                }
 	                console.log(total);
                     alert(total)
@@ -227,10 +250,10 @@ fetch (URL)
                             n1 = +event.target.value
                         })
 
-                        const plantCartPriceElement = document.getElementById("table-precio-");
-                        const plantCartPrice = Number( plantCartPriceElement.value);
+                        const plantCartPriceElement = document.getElementById("table-cantidad-${itemCarrito.id}");
+                        const plantCartPrice = parseInt( plantCartPriceElement).value;
 
-                        const plantCartQuantity = Number( plantCartQuantityElement.value );
+                        const plantCartQuantity = parseInt( plantCartQuantityElement).value;
 
                         totalCount += plantCartPrice * plantCartQuantity;
                     });
@@ -241,8 +264,8 @@ fetch (URL)
                     console.log(cartTotalPrice)
                     */
 
-                    //const plantCartPriceElement = document.getElementById("table-cantidad-");
-                    //const plantCartPrice = parseInt(plantCartPriceElement);
+                    //const plantCartPriceElement = document.getElementById("table-cantidad-${itemCarrito.id}");
+                    //const plantCartPrice = parseInt(plantCartPriceElement).value;
                     //console.log(plantCartPrice)
                     
                     //Metodo para obtener el subtotal
