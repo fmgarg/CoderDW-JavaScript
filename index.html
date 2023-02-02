@@ -166,13 +166,29 @@
       </div>
    </main>
         <div>
-<!-- START Botmaker Webchat-->
+<!-- START Botmaker Webchat
 <script>
     (function () {
         let js = document.createElement('script');
         js.type = 'text/javascript';
         js.async = 1;
         js.src = 'https://go.botmaker.com/rest/webchat/p/PU0XCVIK1T/init.js';
+        document.body.appendChild(js);
+    })();
+</script>-->
+<script>
+<!-- Aquí deben ser definidas todas las variables-->
+    var BOTMAKER_VAR = {
+        firstName: 'newValueForFirstName', 
+        lastName: 'newValueForLastName', 
+        customVar: 'newValueForCustomVar'
+        };
+        
+    (function () {
+        let js = document.createElement('script');
+        js.type = 'text/javascript';
+        js.async = 1;
+        js.src = 'https://go.botmaker.com/rest/webchat/p/XXXXX/init.js';
         document.body.appendChild(js);
     })();
 </script>
